@@ -132,8 +132,10 @@ module.exports = {
     // console.log('  Tracer: ' + chalk.yellow.bold(util.format("%j", symInfo)))
     console.log('  Info: ', symInfo)
     if (this.isFlow) {
-      console.log(flowList)
-    }
+      console.log(flowList.join("\n"))
+    } else {
+			console.log(flowList[1])
+		}			
     console.log("\n")
     this.isFlow = true
 
@@ -159,7 +161,7 @@ module.exports = {
         })
         // stacklist.push(`${cascading} ` + chalk.bgWhite('🔚'))
       }
-      return stackset.join('\n')
+      return stackset
     }
 
     function stackfactor (s) {
