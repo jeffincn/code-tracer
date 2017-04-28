@@ -11,7 +11,7 @@ if ( (project = /(.*)(node_modules)(.*)(\.js)$/i.exec(__filename)) !== null) {
   projectPath = project[1]
 }
 
-const nodeVersion = /v(\d*)\.(\d*)(\.(\d*))?$/i.exec(process.version)[1]
+const nodeVersion = /v(\d*)\.(\d*)(\.(\d*)(.*)?)?$/i.exec(process.version)[1]
 const switcher = false
 
 nodeSrcRef = reference.nodeSrcRef
@@ -62,6 +62,7 @@ module.exports = {
       // console.log("typeof ", typeof traceinfo)
       // const stacklist = traceinfo.split('\n').slice(1)
       const stackset = []
+      console.log(stacklist)
       if (stacklist && stacklist.length > 0) {
         // console.log(stacklist)
         let i = []
