@@ -1,22 +1,24 @@
 # code-tracer
 
-提供一种在 Terminal 环境下对代码位置的执行堆栈进行跟踪，并提供nodejs核心模型中提供的方法提提供快捷链接访问，主要用于对源代码研究和代码执行逻辑的学习及跟踪的需要。
+提供一种在 Terminal 环境下对代码位置的执行堆栈进行跟踪，并提供nodejs版本提供核心模型中提供的方法github库上的链接访问，该插件主要用于对源代码研究和代码执行逻辑的学习及跟踪的需要。
 
 ## 如何使用
 
 安装
 
 ```
-npm install --save-dev code-tracer
+npm install --save code-tracer
 ```
 
 使用
 
+` 在--debug模式下将启用日志打印功能 `
+
 ```
-var tracer = require('tracer');
+var tracer = require('code-tracer');
 
 // 打印当前的信息，类似console.log
-tracer.log('I am watching'); 
+tracer.log('I am watching');
 
 // 打印当前位置的代码堆栈信息
 tracer.stack('What is stacks?');
@@ -29,7 +31,9 @@ tracer.stack('What is stacks?');
   Platform: darwin
   Pid: 36241
   NodeJS: v7.9.0
-  Info:  [ { '0': 'I am watching' } ]
+  Info:  I am watching
+  ↘︎⎼ HomeController.index [7:14] app/controller/home.js
+
 ```
 
 
@@ -40,7 +44,7 @@ tracer.stack('What is stacks?');
   Platform: darwin
   Pid: 34024
   NodeJS: v7.9.0
-  Info:  [ 'What is stacks?' ]
+  Info:  'What is stacks?'
   1 ➜ HomeController.index [7:14] app/controller/home.js
   2 ➜  ↘︎⎼ Object.classControllerMiddleware [77:32] node_modules/egg-core/lib/loader/mixin/controller.js
   3 ➜    ↘︎⎼ <method> [<line>:<pos>] at classControllerMiddleware.next (<anonymous>)
