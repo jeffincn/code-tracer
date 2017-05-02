@@ -62,7 +62,7 @@ module.exports = {
       // console.log("typeof ", typeof traceinfo)
       // const stacklist = traceinfo.split('\n').slice(1)
       const stackset = []
-      console.log(stacklist)
+      // console.log(stacklist)
       if (stacklist && stacklist.length > 0) {
         // console.log(stacklist)
         let i = []
