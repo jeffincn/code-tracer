@@ -4,7 +4,6 @@ const util = require('util')
 const path = require('path')
 
 const slice = Array.prototype.slice
-console.log(__filename)
 
 let projectPath = ''
 if ( (project = /(.*)(node_modules)(.*)(\.js)$/i.exec(__filename)) !== null) {
@@ -115,7 +114,7 @@ module.exports = {
   isDebug() {
     let isDebug = false
     for (const arg of process.execArgv) {
-      if (arg.indexOf('--debug') !== -1) {
+      if (arg.indexOf('--debug') !== -1 || arg.indexOf('--code-tracer') !== -1) {
         isDebug = true
         break
       }
